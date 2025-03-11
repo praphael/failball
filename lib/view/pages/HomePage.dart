@@ -16,6 +16,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
+  bool isLoggedIn = false;
+  String userID = "";
 
   // DashboardPage dashboard = DashboardPage();
   // MyTeamPage myTeam = MyTeamPage();
@@ -68,7 +70,7 @@ class _HomePageState extends State<HomePage> {
         selectedItemColor: Colors.green,
         onTap: _onItemTapped,
       ),
-    );
+    ); 
   }
 }
 

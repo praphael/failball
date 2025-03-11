@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'view/pages/HomePage.dart';
+import 'view/pages/LoginPage.dart';
+import 'view/pages/RegisterPage.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'firebase_options.dart';
 import 'dart:developer';
 
@@ -37,6 +40,20 @@ class FailBallApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+      // Define a widget
+      Widget firstPage;
+      const homePage = HomePage(title: 'Home');
+      const loginPage = LoginPage(title: 'Login');
+
+      // Get the firebase user
+      User? firebaseUser = null; // FirebaseAuth.instance.currentUser;
+
+      // Assign widget based on availability of currentUser
+      if (firebaseUser != null) {
+        firstPage = homePage;
+      } else {
+        firstPage = loginPage;
+      }
     return MaterialApp(
       title: 'Failball',
       theme: ThemeData(
@@ -58,7 +75,12 @@ class FailBallApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(title: 'Failball Home Page'),
+      home: firstPage,
+      routes: <String, WidgetBuilder> {
+          '/login': (BuildContext context) => loginPage,
+          '/register': (BuildContext context) => const RegisterPage(title: 'Register'),
+          '/home': (BuildContext context) => homePage,
+        },
     );
   }
 }

@@ -41,7 +41,8 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyB9XPQhdmse2rNiNVCiRJLXpnZWH4GL0a0',
+    // apiKey: 'AIzaSyB9XPQhdmse2rNiNVCiRJLXpnZWH4GL0a0',
+    apiKey: 'AIzaSyAQAZRXHzhzz9CqHRGLq_hqsi1W7oZ5Z6c',
     appId: '1:1053529813962:web:0ee208a0f8273262509533',
     messagingSenderId: '1053529813962',
     projectId: 'failball',
@@ -59,7 +60,8 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDLnpfqfS8J0iytblVNvIm7wZMQx_5YYi8',
+    // apiKey: 'AIzaSyDLnpfqfS8J0iytblVNvIm7wZMQx_5YYi8',
+    apiKey: 'AIzaSyAQAZRXHzhzz9CqHRGLq_hqsi1W7oZ5Z6c',
     appId: '1:1053529813962:ios:21936028e8c1ea15509533',
     messagingSenderId: '1053529813962',
     projectId: 'failball',
